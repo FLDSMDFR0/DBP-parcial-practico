@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+          <title>Hacklife</title>
+		<script src="{{url_for('static',filename='java.js')}}"></script>
+    </head>
+    <body style="background-color:LightGray">
+        <h1>CV Form: <h1>
+		<form action="{{url_for('CV')}}" method="post">
+			Nombre y Apellidos: <input id="name" type="text" name="name" placeholder="Juanito Alcachofa"><br><br>
+			Fecha de nacimiento: <input type="date" name="fecha"><br><br>
+			Ocupacion: <input id="occupation" type="text" name="occupation" placeholder="madao"><br><br>
+			Contacto <br>Correo: <input id="E-mail" type="email" name="email" placeholder="E-mail"><br>
+			Num. celular: <input type="tel" name="phone" placeholder="913992241" pattern="[0-9]{9}"><br><br>
+			Nacionalidad:
+			<select id="nacionalidad" name="nationality">
+				<option value="Arab">Arab</option>
+				<option value="Argentinian">Argentinian</option>
+				<option value="Bolivian">Bolivian</option>
+				<option value="Canadian">Canadian</option>
+				<option value="Chinese">Chinese</option>
+				<option value="Colombian">Colombian</option>
+				<option value="Cuban">Cuban</option>
+				<option value="Dutch">Dutch</option>
+				<option value="English">English</option>
+				<option value="French">French</option>
+				<option value="German">German</option>
+				<option value="Greek">Greek</option>
+				<option value="Indonesian">Indonesian</option>
+				<option value="Italian">Italian</option>
+				<option value="Japanese">Japanese</option>
+				<option value="Korean">Korean</option>
+				<option value="Mexican">Mexican</option>
+				<option value="Norwegian">Norwegian</option>
+				<option value="Peruvian">Peruvian</option>
+				<option value="Polish">Polish</option>
+				<option value="Portuguese">Portuguese</option>
+				<option value="Russian">Russian</option>
+				<option value="Spanish">Spanish</option>
+				<option value="Swiss">Swiss</option>
+				<option value="Turkish">Turkish</option>
+				<option value="Venezuelan">Venezuelan</option>
+				<option value="Vietnamese">Vietnamese</option>
+			</select><br><br>
+			Nivel de ingles:
+			<h5>
+			<label for="1" ><input type="radio" id="1" name="ilevel" value="Basic">Basic </label>
+			<label for="2"><input type="radio" id="2"  name="ilevel" value="Intermediate">Intermediate </label>	
+ 			<label for="3"><input type="radio" id="3" name="ilevel" value="Advanced">Advanced </label>
+			<label for="4"><input type="radio" id="4" name="ilevel" value="Native">Native </label></h5>
+			Nivel de frances:
+			<h5>
+			<label for="1" ><input type="radio" id="1" name="flevel" value="Basic">Basic </label>
+			<label for="2"><input type="radio" id="2"  name="flevel" value="Intermediate">Intermediate </label>	
+ 			<label for="3"><input type="radio" id="3" name="flevel" value="Advanced">Advanced </label>
+			<label for="4"><input type="radio" id="4" name="flevel" value="Native">Native </label></h5> 	
+			Lenguajes de Programacion: <br>
+			<h5><i class="fa-solid fa-chevron-down" id="pro"></i>
+			<input type="checkbox" id="l1" name="pro" value="Assembly languaje"><label for="1">Assembly languaje</label><br>
+			<input type="checkbox" id="l2" name="pro" value="C"><label for="2">C</label><br>
+			<input type="checkbox" id="l3" name="pro" value="C#"><label for="3">C#</label><br>
+			<input type="checkbox" id="l4" name="pro" value="C++"><label for="4">C++</label><br>
+			<input type="checkbox" id="l5" name="pro" value="Java"><label for="5">Java</label><br>
+			<input type="checkbox" id="l6" name="pro" value="JavaScript"><label for="6">JavaScript</label><br>
+			<input type="checkbox" id="l7" name="pro" value="Matlab"><label for="7">Matlab</label><br>
+			<input type="checkbox" id="l8" name="pro" value="Objetice-C"><label for="8">Objetice-C</label><br>
+			<input type="checkbox" id="l9" name="pro" value="PHP"><label for="9">PHP</label><br>
+			<input type="checkbox" id="l10" name="pro" value="Python"><label for="10">Python</label><br>
+			<input type="checkbox" id="l11" name="pro" value="R"><label for="11">R</label><br>
+			<input type="checkbox" id="l12" name="pro" value="Swift"><label for="12">Swift</label></h5>
+			<input type="hidden" id="cognito" name="cognito" value="1"></input>
+			Aptitudes: <br>
+			<input list="Aptitudes" name="skill" id="Skills">
+			<datalist id="Aptitudes">
+				<option value="Creatividad"></option>
+				<option value="Inteligencia Emocional"></option>
+				<option value="Espiritu critico"></option>
+				<option value="Trabajo en equipo"></option>
+				<option value="Capacidad analitica"></option>
+				<option value="Liderazgo"></option>
+				<option value="Resiliencia"></option>
+				<option value="Habilidades fisicas"></option>
+			</datalist><br><br>
+			Habilidades: 
+			<h5>
+			<input type="checkbox" id="a1" name="ability" value="Habilidad en marketing"><label for="1">Habilidad en marketing</label><br>
+			<input type="checkbox" id="a2" name="ability" value="Pack office"><label for="2">Pack office</label><br>
+			<input type="checkbox" id="a3" name="ability" value="Gestión de tiempo"><label for="3">Gestión de tiempo</label><br>
+			<input type="checkbox" id="a4" name="ability" value="Acondicionamiento fisico"><label for="4">Acondicionamiento fisico</label><br>
+			<input type="checkbox" id="a5" name="ability" value="Creacion videos deportivos"><label for="5">Creacion videos deportivos</label><br>
+			<input type="checkbox" id="a6" name="ability" value="Organizacion y planificacion"><label for="6">Organizacion y planificacion</label><br>
+			<input type="checkbox" id="a7" name="ability" value="Tenis"><label for="7">Tenis</label></h5>
+			<input type="hidden" id="incognito" name="incognito" value="1"></input>
+			Perfil: <br>
+			<textarea id="profile" name="profile" placeholder="Se activa con click, dale click >:v" rows="7" cols="150" ></textarea><br>
+			<button class="button" id="submit">Submit</button>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+	<title>CV</title>
+</head>
+
+<style>
+* { box-sizing: border-box;}
+body {font-family: Arial, Helvetica, sans-serif;}
+header {
+  background-color: #595757;
+  width: 1000px;
+  padding: 20px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+espacio {
+  float: left;
+  width: 50px;
+  padding: 20px;
+}
+foto {
+  float: left;
+  width: 20%;
+  border-radius:200px;
+  height: 185px;
+  padding: 20px;
+}
+
+nav {
+  float: left;
+  width: 350px;
+  height: 1100px; 
+  background: #f1f1f1;
+  padding: 20px;
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+article {
+  float: left;
+  padding: 20px;
+  width: 650px;
+  height: 1100px; 
+}
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+<header>
+	<espacio></espacio>
+	<foto>
+        <img src="{{url_for('static',filename='images/leder.jpg')}}" alt="fotodelfeo" width=200px height=200px >
+    </foto>
+    <font style="font-family: Trebuchet MS; font-size:70px;" ><br>{{newname}}</font><br>
+     <font style="font-family: Trebuchet MS; font-size:30px;color:#A6A3A3;" >{{newoccupation}} </font>
+</header>
+
+<section>
+  <nav>
+    	<h3>CONTACTO<br>————————————————</h3>
+            <h4>
+                <dt><img src="{{url_for('static',filename='images/telefono.png')}}" alt="fototel" width="24" height="24">&nbsp  {{newcel}}<dt>
+                <dt><img src="{{url_for('static',filename='images/sobre.png')}}" alt="fotosobre" width="22" height="22">&nbsp {{newemail}}<dt>
+                <dt><img src="{{url_for('static',filename='images/ubicacion.png')}}" alt="fotoubic" width="20" height="20">&nbsp {{newnationality}}<dt>
+                <dt><img src="{{url_for('static',filename='images/in.png')}}" alt="fotolink" width="18" height="18">&nbsp  linkedin.com/{{newname}}<dt>
+            </h4>
+            <lh><h3>IDIOMAS<br>————————————————</h3>
+            <h4>
+                <dt>Español: Nativo</dt>
+                <dt>Inglés: {{newilevel}}</dt>
+                <dt>Francés:{{newflevel}}</dt>
+            </h4>
+            <h3>APTITUDES<br>————————————————</h3>
+            <h4>
+                <li>{{newskill}}</li><br>
+             
+            </h4>
+            <lh><h3>HABILIDADES<br>————————————————</h3>
+            <font><h4>
+				{% if newability[0] %}
+                <li>{{newability[0]}}</li>{% endif %}
+				{% if newability[1] %}
+                <li>{{newability[1]}}</li>{% endif %}
+				{% if newability[2] %}
+                <li>{{newability[2]}}</li>{% endif %}
+				{% if newability[3] %}
+                <li>{{newability[3]}}</li>{% endif %}
+				{% if newability[4] %}
+                <li>{{newability[4]}}</li>{% endif %}
+				{% if newability[5] %}
+                <li>{{newability[5]}}</li>{% endif %}
+				{% if newability[6] %}
+                <li>{{newability[6]}}</li>{% endif %}
+            </h4></font>
+            <lh><h3>OTRAS EXPERIENCIAS LABORALES<br>————————————————</h3>
+            <font><h4>
+				{% if newpro[0] %}
+                <li>{{newpro[0]}}</li>{% endif %}
+				{% if newpro[1] %}
+                <li>{{newpro[1]}}</li>{% endif %}
+				{% if newpro[2] %}
+                <li>{{newpro[2]}}</li>{% endif %}
+				{% if newpro[3] %}
+                <li>{{newpro[3]}}</li>{% endif %}
+				{% if newpro[4] %}
+                <li>{{newpro[4]}}</li>{% endif %}
+				{% if newpro[5] %}
+                <li>{{newpro[5]}}</li>{% endif %}
+				{% if newpro[6] %}
+                <li>{{newpro[6]}}</li>{% endif %}
+				{% if newpro[7] %}
+                <li>{{newpro[7]}}</li>{% endif %}
+				{% if newpro[8] %}
+                <li>{{newpro[8]}}</li>{% endif %}
+				{% if newpro[9] %}
+                <li>{{newpro[9]}}</li>{% endif %}
+				{% if newpro[10] %}
+                <li>{{newpro[10]}}</li>{% endif %}
+				{% if newpro[11] %}
+                <li>{{newpro[11]}}</li>{% endif %}
+            </h4></font>
+  </nav>
+  
+  <article>
+    <h3>PERFIL<br>———————————————————————————————</h3>
+                <h4>{{newname}} - {{newdate}} ; {{newprofile}}</h4>
+    <h3>EXPERIENCIA LABORAL<br>———————————————————————————————</h3>
+                <h3>Trabajador Social</h3>
+                <font><i><b>México DF,</b></i><font  style="color:grey">| 2022 — Actualmente</font></font>
+                <h5>
+                    <li>Coordinador y mediador entre los equipos de ayuda psicológica a <BR>
+                    jóvenes y niños en exclusión social.</li>
+                    <li>Velar por la salud mental del equipo  y de miembros envolucrados en<BR>
+                    proyectos.</li>
+                    <li>Mapeo de necesidaes estrategicas y lógicas para kas diferentes áreas.</li>
+                    <li>Monitor de ejercicios físicos para adolescentes.</li>
+                    <li>Programar diferentes actividades extracurriculares en los involucrados.</li>
+                </h5>
+                <h3>Trabajador Social</h3>
+                <font><b>México DF, </b><font  style="color:grey">| 2020-2022</font>
+                <h5>
+                    <li>Funciones para seguimientos de casos para jóvenes con problemas de <BR>
+                    adicciones.</li>
+                    <li>Capacidades e intergración vinculadas a medidas preventivas.<BR>
+                    proyectos.</li>
+                    <li>Recopilación de evidencia para audiotiras y programas sociales.</li>
+                </h5>
+                <h3>Trabajador Social(Prácticas)</h3>
+                <font><i><b>Zaragoza, </i> España </b><font  style="color:grey">| 2019 — 2020</font>
+                <h5>
+                    <li>Profesor de lengua española e inglesa para jovenes migrantes.</li>
+                    <li>Monitor de  actividades ecológicas con adolescentes.</li>
+                    <li>Coordinador de áreas deportivas.</li>
+                </h5>
+            <h3>FORMACION<br>———————————————————————————————</h3>
+                <h3>Grado de Trabajo Social</h3>
+                <font><i><b>ESMA,</i> Madrid </b><font  style="color:grey">| 2012 - 2015</font>
+                <h3>Licenciatura Profesional</h3>
+                <font><i><b>Universidad de la Frontera, </i> México DF <font  style="color:grey">| 2011-2012</font>
+  </article>
+</section>
+</body>
+</html>
